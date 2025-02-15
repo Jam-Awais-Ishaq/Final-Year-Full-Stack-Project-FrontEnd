@@ -50,7 +50,7 @@ const NewPassword = () => {
         setState({ ...state, isLoading: true });
         setTimeout(() => {
             setState({ ...state, isLoading: false, success: true });
-            alert("Password reset successful! Redirecting...");
+            console.log("Password reset successful! Redirecting...");
 
         }, 3000);
     };
