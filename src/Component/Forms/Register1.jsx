@@ -75,8 +75,8 @@ const Register1 = () => {
     }
 
     return (
-        <div className='relative'>
-            <div className='p-4 fixed inset-0 my-2 w-[400px] h-[95vh] max-w-md mx-auto border border-slate-500 bg-white rounded-2xl'>
+        
+            <div className='p-4 fixed inset-0 mt-1 w-[400px] h-[98vh] max-w-md mx-auto border border-slate-500 bg-white rounded-2xl'>
                 <button onClick={handleToggle} className='absolute right-0 top-0 bg-slate-300 p-4 h-4 w-4 flex justify-center items-center rounded-2xl'>X</button>
                 <div className="flex items-center justify-start ml-5 mb-5">
                     <span className='relative border-2 p-2 border-[#0d1222] bg-slate-200 text-[#0d1222] rounded-full text-2xl'>
@@ -92,37 +92,38 @@ const Register1 = () => {
                         <h1 className='font-bold text-3xl'>Welcome Back</h1>
                         <p className='text-slate-800 text-lg font-thin'>Login to continue shopping</p>
                     </div>
-                    <input type="email" name="email" placeholder='Enter Your Email' value={formData.email} onChange={handleChange} className='border border-slate-300 rounded-lg p-2 w-90' required />
-                    <input type="text" name="username" placeholder='UserName' value={formData.username} onChange={handleChange} className='border border-slate-300 rounded-lg p-2 w-full' required />
-                    <input type="text" name="phone" placeholder='Phone#' value={formData.phone} onChange={handleChange} className='border border-slate-300 rounded-lg p-2 w-full' required />
-                    <input type="password" name="password" placeholder='Enter Your Password' value={formData.password} onChange={handleChange} className='border border-slate-300 rounded-lg p-2 w-full' required />
-                    <input type="password" name="confirmPassword" placeholder='Confirm Your Password' value={formData.confirmPassword} onChange={handleChange} className='border border-slate-300 rounded-lg p-2 w-full' required />
 
-                   
+                    <input type="email" name="email" placeholder='Enter Your Email' value={formData.email} onChange={handleChange} className='border border-slate-300 rounded p-1 w-90' required />
+                    <input type="text" name="username" placeholder='UserName' value={formData.username} onChange={handleChange} className='border border-slate-300 rounded p-1 w-full' required />
+                    <input type="text" name="phone" placeholder='Phone#' value={formData.phone} onChange={handleChange} className='border border-slate-300 rounded p-1 w-full' required />
+                    <input type="password" name="password" placeholder='Enter Your Password' value={formData.password} onChange={handleChange} className='border border-slate-300 rounded p-1 w-full' required />
+                    <input type="password" name="confirmPassword" placeholder='Confirm Your Password' value={formData.confirmPassword} onChange={handleChange} className='border border-slate-300 rounded p-1 w-full' required />
+
                     <div className='flex justify-between w-full cursor-pointer'>
                         <div className='flex w-[50%] items-center'>
                             <input type="checkbox" value={formData.checkeInput} />
                             <p className='text-[13px] ml-2'> Terms & Condition </p>
                         </div>
                     </div>
-                    <div className='h-[8px] text-center'>
+
+                    <div className='h-4 text-center'>
                         {formData.error && <p className="text-red-500 text-sm">{formData.error}</p>}
                         {formData.success && <p className="text-green-500 text-sm">{formData.success}</p>}
                     </div>
+
                     <button
                         type="submit"
-                        className="w-full bg-[#ce3d53] hover:bg-red-700 text-white font-semibold py-2 rounded-lg transition duration-300 flex justify-center items-center"
-                        disabled={formData.isLoading}
-                    >
+                        className="w-full bg-[#ce3d53] hover:bg-red-700 text-white font-semibold py-2 rounded-lg transition duration-300 flex justify-center items-center" disabled={formData.isLoading}>
                         {formData.isLoading ? <CircularProgress size={24} className="text-white" /> : "Register"}
                     </button>
 
                     <div className='flex justify-center'>
                         <p>Already have an account? <a className='text-blue-600 border-b-2 cursor-pointer border-blue-600' onClick={handleToggle}>Login</a></p>
                     </div>
+
                 </form>
             </div>
-        </div>
+        
     );
 };
 

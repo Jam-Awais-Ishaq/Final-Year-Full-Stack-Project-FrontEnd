@@ -76,7 +76,7 @@ const Login1 = () => {
             {showNewPassword ? (
                 <NewPassword />
             ) : (
-                <div className='p-10 w-[400px] h-[92vh] max-w-md mx-auto bg-white rounded-2xl'>
+                <div className='p-10 w-[400px] h-[98vh] max-w-md mx-auto bg-white rounded-2xl'>
                     <div className="flex items-center justify-start ml-5 mb-5">
                         <span className='relative border-2 p-2 border-[#0d1222] bg-slate-200 text-[#0d1222] rounded-full text-2xl'>
                             <MdHome />
@@ -138,12 +138,12 @@ const Login1 = () => {
                             </div>
                         </div>
 
-                        <button type="button" className='h-11 group bg-slate-300 py-2 flex justify-center items-center rounded-md transition ease-in-out'>
-                            <img src={google} className='h-10 w-12 rounded-full' alt="Google" />
+                        <button type="button" className='h-9 group bg-slate-300 py-2 flex justify-center items-center rounded-md transition ease-in-out'>
+                            <img src={google} className='h-9 w-12 rounded-full' alt="Google" />
                             <p className='ml-4 font-semibold text-slate-800'>Continue with Google</p>
                         </button>
-                        <button type="button" className='h-11 group bg-slate-300 py-2 flex justify-center items-center rounded-md transition ease-in-out'>
-                            <img src={playstore} className='h-10 w-10 bg-transparent ml-10 rounded-full' alt="Playstore" />
+                        <button type="button" className='h-9 group bg-slate-300 py-2 flex justify-center items-center rounded-md transition ease-in-out'>
+                            <img src={playstore} className='h-9 w-10 bg-transparent ml-10 rounded-full' alt="Playstore" />
                             <p className='mx-2 font-semibold text-slate-800'>Continue with Playstore</p>
                         </button>
                         <div className='flex justify-center'>

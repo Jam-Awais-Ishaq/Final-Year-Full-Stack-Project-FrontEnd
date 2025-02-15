@@ -4,6 +4,7 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import CircularProgress from "@mui/material/CircularProgress";
 import Login1 from "./Login1";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const NewPassword = () => {
     const [state, setState] = useState({
@@ -46,10 +47,7 @@ const NewPassword = () => {
             }, 3000);
             return;
         }
-
         setState({ ...state, isLoading: true });
-
-        // Simulating API call
         setTimeout(() => {
             setState({ ...state, isLoading: false, success: true });
             alert("Password reset successful! Redirecting...");

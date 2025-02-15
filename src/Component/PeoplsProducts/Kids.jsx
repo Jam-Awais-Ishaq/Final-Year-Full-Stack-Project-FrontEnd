@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaRegHeart, FaRegEyeSlash, FaStar } from "react-icons/fa"; // Importing the Star icon
-import img1 from "../images/BoysApparel2.png";
-import img2 from "../images/homeLeft.jpeg";
+import img1 from "../../images/BoysApparel2.png";
 
-export default function Loops() {
-  let datas = [
+
+export default function Kids() {
+  const [datas, setDatas] = useState([])
+
+  useEffect(() => {
+    setDatas(products)
+  }, [])
+
+  let products = [
     {
       id: "1",
       img: img1,
@@ -14,7 +20,7 @@ export default function Loops() {
     },
     {
       id: "2",
-      img: img2,
+      img: img1,
       text: "Whitedress",
       description: "The goal of writing image descriptions is to be clear and concise.",
       price: 100,
@@ -28,7 +34,7 @@ export default function Loops() {
     },
     {
       id: "4",
-      img: img2,
+      img: img1,
       text: "Whitedress",
       description: "The goal of writing image descriptions is to be clear and concise.",
       price: 100,
@@ -42,7 +48,7 @@ export default function Loops() {
     },
     {
       id: "6",
-      img: img2,
+      img: img1,
       text: "Whitedress",
       description: "The goal of writing image descriptions is to be clear and concise.",
       price: 100,
@@ -56,7 +62,7 @@ export default function Loops() {
     },
     {
       id: "8",
-      img: img2,
+      img: img1,
       text: "Whitedress",
       description: "The goal of writing image descriptions is to be clear and concise.",
       price: 100,
@@ -71,53 +77,33 @@ export default function Loops() {
   ];
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100 p-4">
+    <div className="flex justify-center items-center bg-gray-100 p-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
         {datas.map((data) => {
           return (
-            <div
-              key={data.id}
-              className="bg-white shadow-lg rounded-lg p-4 relative group"
-            >
-              {/* Product Image Container */}
-              <div className="relative overflow-hidden rounded-lg">
-                {/* Product Image */}
-                <img
-                  src={data.img}
-                  alt={data.text}
-                  className="w-full h-auto object-cover rounded-lg"
-                />
-
-                {/* Hover Text & Price (Initially Hidden) */}
-                <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center opacity-0 translate-y-full transition-all duration-500 ease-in-out group-hover:translate-y-0 group-hover:opacity-100">
+            <div key={data.id} className="bg-slate-300 shadow-lg rounded-lg relative group">
+              <div className="relative overflow-hidden rounded-">
+                <img src={data.img} alt={data.text} className="w-full object-cover rounded-lg" />
+                <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center opacity-0 translate-y-full transition-all duration-500 ease-in-out group-hover:translate-y-0 group-hover:opacity-100">
                   <h2 className="text-white text-lg font-bold">{data.text}</h2>
-                  <p className="text-white text-xl font-bold mt-1">
+                  <p className="text-white text-xl font-bold ">
                     ${data.price.toFixed(2)}
                   </p>
                 </div>
-
-                {/* Icons (Initially Hidden, Slide from Right) */}
                 <div className="absolute top-4 right-4 flex flex-col space-y-2 opacity-0 translate-x-8 transition-all duration-500 ease-in-out group-hover:translate-x-0 group-hover:opacity-100">
-                  {/* Heart Icon with Delay */}
                   <button className=" p-2 rounded-full shadow-lg transition delay-100 opacity-0 group-hover:opacity-100 group-hover:delay-100">
-                    <FaRegHeart  className="text-white text-lg" />
+                    <FaRegHeart className="text-white text-lg" />
                   </button>
-
-                  {/* Info Icon with Delay */}
                   <button className=" p-2 rounded-full shadow-lg transition duration-200 opacity-0 group-hover:opacity-100 group-hover:duration-200">
-                    <FaRegEyeSlash  className="text-white text-lg" />
+                    <FaRegEyeSlash className="text-white text-lg" />
                   </button>
-
-                  {/* Star Icon with Delay */}
                   <button className=" p-2 rounded-full shadow-lg transition delay-300 opacity-0 group-hover:opacity-100 group-hover:duration-300">
                     <FaStar className="text-yellow-500 text-lg" />
                   </button>
                 </div>
               </div>
-
-              {/* Add to Cart Button (Always Visible) */}
               <div className="p-4 text-center">
-                <button className="mt-4 w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300">
+                <button className="w-[100%] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300">
                   Add to Cart
                 </button>
               </div>

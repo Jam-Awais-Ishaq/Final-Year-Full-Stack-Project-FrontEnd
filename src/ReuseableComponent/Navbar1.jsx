@@ -7,11 +7,10 @@ import { IoClose } from "react-icons/io5";
 
 import { FaHome, FaInfo, FaServicestack, FaDollarSign, FaPhone } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import NewPassword from "../Component/Forms/NewPassword";
 import Login1 from "../Component/Forms/Login1";
 
 
-const Navbar = () => {
+const Navbar1 = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [toggle, setToggle] = useState(false)
@@ -47,8 +46,8 @@ const Navbar = () => {
     return (
         <>
             <nav className=" shadow-md">
-                <div className="flex flex-wrap items-center justify-between  p-2">
-                    <Link to="/" className="flex items-center"><span className="self-center text-2xl font-bold text-slate-500  whitespace-nowrap ">WearHub</span></Link>
+                <div className="flex flex-wrap items-center justify-between p-2">
+                    <Link to="/" className="flex items-center"><span className="self-center text-2xl ml-3 font-bold text-slate-500  whitespace-nowrap ">WearHub</span></Link>
                     <div className="flex items-center md:order-2 ">
                         <button type="button" onClick={handleChange} className="rounded-lg px-4  py-2 hover:text-cyan-200 hover:bg-slate-800 transition ease-in font-bold mx-2 border border-slate-100 shadow-xl text-slate-100 bg-slate-400"> Login </button>
 
@@ -100,9 +99,9 @@ const Navbar = () => {
                                 </Link>
                             </li>
                             <li className="flex items-center md:py-0 py-3 hover:transition space-x-2">
-                                <a href="#" className="block text-slate-500  xl:text-[20px] transition ease-in hover:scale-110 lg:text-[13px] md:text-[10px]  relative group">Kids
+                                <Link to='kids' className="block text-slate-500  xl:text-[20px] transition ease-in hover:scale-110 lg:text-[13px] md:text-[10px]  relative group">Kids
                                     <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-black transition-all duration-300 transform -translate-x-1/2 group-hover:w-full"></span>
-                                </a>
+                                </Link>
                             </li>
                             <li className="flex items-center md:py-0 py-3 space-x-2">
                                 <a href="#" className="block text-slate-500  xl:text-[20px] transition ease-in hover:scale-110 lg:text-[13px] md:text-[10px] hover:text-slate-400 relative group">Pricing
@@ -138,4 +137,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default Navbar1;

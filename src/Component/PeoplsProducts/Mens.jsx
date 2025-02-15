@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import menImg from '../images/sliderImage.png'
+import menImg from '../../images/sliderImage.png'
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -21,12 +21,12 @@ const Mens = () => {
     }, [])
     return (
         <>
-            <div className='grid grid-cols-4 overflow-x-hidden p-2'>
+            <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 overflow-x-hidden p-2'>
                 {mens.map((men) => (
-                    <div key={men.id} className="relative border border-slate-300 rounded-lg w-[23%] my-1 mx-3 flex justify-between items-center flex-col group">
+                    <div key={men.id} className="relative border border-slate-300 rounded-lg  my-1 mx-3 flex justify-between items-center flex-col group">
                         <img className=" h-[35vh] transition-all group-hover:scale-110 duration-500 group-hover:rounded-3xl ease-in-out cursor-pointer mx-[8px] my-[20px] rounded" src={men.img} />
-                        <span className="absolute top-5 right-[-50px] group-hover:right-1 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 w-fit text-slate-600"> <RemoveRedEyeIcon /> </span>
-                        <span className="absolute top-12 right-[-50px] group-hover:right-1 transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100 w-fit text-slate-600"> <FavoriteBorderIcon /> </span>
+                        <span className="absolute top-5 right-[-20px] group-hover:right-4 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 w-fit text-slate-600"> <RemoveRedEyeIcon /> </span>
+                        <span className="absolute top-12 right-[-20px] group-hover:right-4 transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100 w-fit text-slate-600"> <FavoriteBorderIcon /> </span>
                         <h1 className="lg:text-lg capitalize font-semibold cursor-pointer">{men.title}</h1>
                         <p className="lg:text-xl text-yellow-500 cursor-pointer"><StarBorderIcon /><StarBorderIcon /><StarBorderIcon /><StarBorderIcon /><StarBorderIcon /></p>
                         <h3 className="cursor-pointer text-2xl">${men.price}</h3>

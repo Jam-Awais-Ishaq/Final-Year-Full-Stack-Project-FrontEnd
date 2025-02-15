@@ -3,8 +3,8 @@ import React from 'react'
 const Discover = () => {
     return (
         <>
-            <div className='md:flex justify-between items-center  px-5 my-5 '>
-                <div className='border border-slate-300 rounded-xl md:w-[48%] p-1'>
+            <div className='md:flex justify-between items-center px-5 my-5 '>
+                <div className='border border-slate-300 rounded-xl  md:w-[48%] p-1'>
                     <div style={{ backgroundImage: 'url(src/images/homepage.jpeg)', backgroundSize: "cover", backgroundPosition: "center" }} className='w-[100%] rounded h-[50vh] mb-3 flex justify-center  items-start px-2 flex-col'>
                         <h1 className='w-[70%]  font-bold italic text-slate-500 xl:text-3xl lg:text-xl mb-3'>You should consult an Ai fashion designer to recommend color combinations.</h1>
                         <button type="button" className='mt-3 bg-slate-900 text-white xl:p-4 lg:p-3 p-2 rounded-md font-bold'>Discover Now</button>
@@ -22,7 +22,7 @@ const Discover = () => {
                         </div>
                     </div>
                 </div>
-                <div className='border-2 border-red-800  rounded-xl flex justify-center pt-[45px] pl-2 text-slate-700 items-start flex-col lg:h-[90vh] mt-1 md:h-[167vh] md:w-[48%]' style={{ backgroundImage: 'url(src/images/homeright.jpeg)', backgroundSize: "cover", backgroundPosition: "right" }}>
+                <div className='border border-slate-300  rounded-xl flex justify-center pt-[45px] pl-2 text-slate-700 items-start flex-col  lg:h-[100vh] mt-1 md:h-[163vh] md:w-[48%]' style={{ backgroundImage: 'url(src/images/homeright.jpeg)', backgroundSize: "cover", backgroundPosition: "center" }}>
                     <h1 className='md:text-6xl text-4xl capitalize font-bold'>garments</h1>
                     <p className='w-[60%] capitalize font-semibold py-4'>Enjoy the summer time and shop our SS20 Collection at up to 50% off, for a limited time</p>
 

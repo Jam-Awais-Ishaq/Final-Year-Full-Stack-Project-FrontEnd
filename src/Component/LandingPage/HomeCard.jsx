@@ -1,8 +1,8 @@
 import React from 'react'
 // import homeImage from '../images/banner-68.webp'
-import homeImage1 from '../images/card1.jpeg'
-import homeImage2 from '../images/homeLeft.jpeg'
-import homeImage3 from '../images/homepage.jpeg'
+import homeImage1 from '../../images/card1.jpeg'
+import homeImage2 from '../../images/homeLeft.jpeg'
+import homeImage3 from '../../images/homepage.jpeg'
 const HomeCard = () => {
     const products = [
         { id: 0, img: homeImage1, title: "weekend discount", cardBody: "complement your flawless beauty", cardfoot: "only this week don't miss..." },

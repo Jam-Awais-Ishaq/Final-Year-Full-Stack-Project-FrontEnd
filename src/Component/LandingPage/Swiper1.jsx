@@ -7,13 +7,13 @@ import StarBorderIcon from '@mui/icons-material/StarBorder';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 // images
-import BoysApparel from '../images/BoysApparel2.png';
-import peach from '../images/peach.png'
-import whiteimg from '../images/white.png'
-import peachFeshion from '../images/peachFashion.png'
-import sliderImage from '../images/sliderImage.png'
-import women from '../images/women.png'
-import charcoal from '../images/charcoal.png'
+import BoysApparel from '../../images/BoysApparel2.png';
+import peach from '../../images/peach.png'
+import whiteimg from '../../images/white.png'
+import peachFeshion from '../../images/peachFashion.png'
+import sliderImage from '../../images/sliderImage.png'
+import women from '../../images/women.png'
+import charcoal from '../../images/charcoal.png'
 import { useEffect, useState } from 'react';
 
 export default function Swiper1() {
@@ -40,8 +40,8 @@ export default function Swiper1() {
                         <SwiperSlide key={slide.id} className="border-2 px-9 rounded-lg border-slate-400 flex justify-center items-center">
                             <div className="relative flex justify-center items-center flex-col group">
                                 <img className=" h-[35vh] transition-all group-hover:scale-110 duration-500 group-hover:rounded-3xl ease-in-out cursor-pointer mx-[8px] my-[20px] rounded" src={slide.img} alt={slide.title} />
-                                <span className="absolute top-5 right-[-50px] group-hover:right-1 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 w-fit text-slate-600"> <RemoveRedEyeIcon /> </span>
-                                <span className="absolute top-12 right-[-50px] group-hover:right-1 transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100 w-fit text-slate-600"> <FavoriteBorderIcon /> </span>
+                                <span className="absolute top-5 right-[-40px] group-hover:right-1 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 w-fit text-slate-600"> <RemoveRedEyeIcon /> </span>
+                                <span className="absolute top-12 right-[-40px] group-hover:right-1 transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100 w-fit text-slate-600"> <FavoriteBorderIcon /> </span>
                                 <h1 className="lg:text-lg capitalize font-semibold cursor-pointer">{slide.title}</h1>
                                 <p className="lg:text-xl text-yellow-500 cursor-pointer"><StarBorderIcon /><StarBorderIcon /><StarBorderIcon /><StarBorderIcon /><StarBorderIcon /></p>
                                 <h3 className="cursor-pointer text-2xl">${slide.price}</h3>

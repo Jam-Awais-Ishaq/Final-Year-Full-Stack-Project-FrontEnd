@@ -1,9 +1,8 @@
-import React from 'react'
-import Home from './Home'
-import HomeCard from './HomeCard'
-import Swiper1 from './Swiper1'
-import Discover from './Discover'
-import Swiper2 from './Swiper2'
+import Home from '../Component/LandingPage/Home'
+import Discover from './LandingPage/Discover'
+import HomeCard from "./LandingPage/HomeCard"
+import Swiper1 from './LandingPage/Swiper1'
+import Swiper2 from './LandingPage/Swiper2'
 const HomeComp = () => {
   return (
     <>
