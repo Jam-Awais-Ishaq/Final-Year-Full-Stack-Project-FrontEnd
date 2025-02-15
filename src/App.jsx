@@ -8,7 +8,7 @@ import Login1 from './Component/Forms/Login1';
 import Register1 from './Component/Forms/Register1';
 import NewPassword from './Component/Forms/NewPassword';
 import Footer1 from './ReuseableComponent/Footer1';
-import HomeComp from './Component/HomeComp';
+import HomeComp from './Component/Pages/HomeComp';
 import Kids from './Component/PeoplsProducts/Kids';
 
 function App() {
