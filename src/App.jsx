@@ -10,6 +10,7 @@ import NewPassword from './Component/Forms/NewPassword';
 import Footer1 from './ReuseableComponent/Footer1';
 import HomeComp from './Component/Pages/HomeComp';
 import Kids from './Component/PeoplsProducts/Kids';
+import ContactForm from './Component/Contact/ContactForm';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/login" element={<Login1 />} />
           <Route path='/register1' element={<Register1 />} />
           <Route path="/new-password" element={<NewPassword />} />
+          <Route path="/contact" element={<ContactForm/>}/>
         </Routes>
         <Footer1 />
       </Router>

@@ -17,7 +17,7 @@ const Discover = () => {
                             <p className='font-semibold my-2'>Together in a Bag</p>
                             <button className='border-b-2 my-3 font-extrabold uppercase border-red-500'>shop Now</button>
                         </div>
-                        <div style={{ backgroundImage: `url(${homeRight})`, backgroundSize: "cover", backgroundPosition: "center" }} className='h-[200px] px-3 lg:w-[48%] my-2 flex justify-center items-start rounded-xl flex-col text-slate-700 '>
+                        <div style={{ backgroundImage: `url(${homeRight})`, backgroundSize: "cover", backgroundPosition: "center" }} className='h-[200px] border px-3 lg:w-[48%] my-2 flex justify-center items-start rounded-xl flex-col text-slate-700 '>
                             <h2 className='text-red capitalize  font-bold text-2xl'>Tops</h2>
                             <p className='font-semibold my-2'>Get the latest signature pieces</p>
                             <button className='border-b-2 my-3 font-extrabold uppercase border-red-500'>shop Now</button>
