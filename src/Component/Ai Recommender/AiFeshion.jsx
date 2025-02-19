@@ -106,7 +106,7 @@ function AiFashion() {
           </form>
 
           {/* Result Section */}
-          <div className="md:w-1/2 flex items-center shadow-2xl shadow-slate-700 justify-center bg-gray-200 h-64 rounded-lg">
+          <div className="md:w-1/2 flex items-center shadow-lg shadow-slate-500 justify-center bg-gray-200 h-64 rounded-lg">
             {generatedImage ? (
               <img
                 src={generatedImage}
