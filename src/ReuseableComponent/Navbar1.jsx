@@ -104,14 +104,9 @@ const Navbar1 = () => {
                                 </Link>
                             </li>
                             <li className="flex items-center md:py-0 py-3 space-x-2">
-                                <a href="#" className="block text-slate-500  xl:text-[20px] transition ease-in hover:scale-110 lg:text-[13px] md:text-[10px] hover:text-slate-400 relative group">Pricing
+                                <Link to="ai" className="block text-slate-500  xl:text-[18px] transition ease-in hover:scale-110 lg:text-[13px] md:text-[10px] hover:text-slate-400 relative group">Ai Feshion Designer
                                     <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-black transition-all duration-300 transform -translate-x-1/2 group-hover:w-full"></span>
-                                </a>
-                            </li>
-                            <li className="flex items-center md:py-0 py-3 space-x-2">
-                                <a href="#" className="block text-slate-500  xl:text-[18px] transition ease-in hover:scale-110 lg:text-[13px] md:text-[10px] hover:text-slate-400 relative group">Ai Feshion Designer
-                                    <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-black transition-all duration-300 transform -translate-x-1/2 group-hover:w-full"></span>
-                                </a>
+                                </Link>
                             </li>
                             <li className="flex items-center md:py-0 py-3 space-x-2">
                                 <Link to="contact" className="block text-slate-500 xl:text-[20px]  transition ease-in hover:scale-110 lg:text-[13px] md:text-[10px] hover:text-slate-400 relative group">Contact

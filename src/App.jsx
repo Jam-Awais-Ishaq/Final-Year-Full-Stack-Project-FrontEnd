@@ -11,6 +11,7 @@ import Footer1 from './ReuseableComponent/Footer1';
 import HomeComp from './Component/Pages/HomeComp';
 import Kids from './Component/PeoplsProducts/Kids';
 import ContactForm from './Component/Contact/ContactForm';
+import AiFashion from './Component/Ai Recommender/AiFeshion';
 
 function App() {
   return (
@@ -27,10 +28,12 @@ function App() {
           <Route path='/register1' element={<Register1 />} />
           <Route path="/new-password" element={<NewPassword />} />
           <Route path="/contact" element={<ContactForm/>}/>
+          <Route path="/ai" element={<AiFashion/>}/>
         </Routes>
         <Footer1 />
       </Router>
       {/* <Register1/> */}
+      {/* <AiFashion/> */}
     </>
   );
 }

@@ -6,7 +6,7 @@ import Swiper2 from '../../Component/LandingPage/Swiper2'
 const HomeComp = () => {
   return (
     <>
-    <div className='flex flex-col'>
+    <div className=''>
       <Home />
       <HomeCard />
       <Swiper1 />
