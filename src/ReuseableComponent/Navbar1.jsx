@@ -46,6 +46,9 @@ const Navbar1 = () => {
     return (
         <>
             <nav className=" shadow-md">
+                <div className="bg-slate-600">
+                    <marquee behavior="linear" className="text-white" direction="">Welcome to WearHub – Your Ultimate Fashion Destination!</marquee>
+                </div>
                 <div className="flex flex-wrap items-center justify-between p-2">
                     <Link to="/" className="flex items-center"><span className="self-center text-2xl ml-3 font-bold text-slate-500  whitespace-nowrap ">WearHub</span></Link>
                     <div className="flex items-center md:order-2 ">
