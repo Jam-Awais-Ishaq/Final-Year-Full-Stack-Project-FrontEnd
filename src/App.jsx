@@ -12,7 +12,6 @@ import HomeComp from './Component/Pages/HomeComp';
 import Kids from './Component/PeoplsProducts/Kids';
 import ContactForm from './Component/Contact/ContactForm';
 import AiFashion from './Component/Ai Recommender/AiFeshion';
-
 function App() {
   return (
     <>
@@ -21,8 +20,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeComp />} />
           <Route path="/mens" element={<Mens />} />
-          <Route path="/womens1" element={<Womens1 />} />
-          <Route path='/kids' element={<Kids/>}/>
+          <Route path="/womens" element={<Womens1 />} />
+          <Route path='/childrens' element={<Kids/>}/>
           <Route path="/forget-password" element={<ForgetPassword />} />
           <Route path="/login" element={<Login1 />} />
           <Route path='/register1' element={<Register1 />} />
@@ -32,8 +31,6 @@ function App() {
         </Routes>
         <Footer1 />
       </Router>
-      {/* <Register1/> */}
-      {/* <AiFashion/> */}
     </>
   );
 }

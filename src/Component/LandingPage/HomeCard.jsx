@@ -12,10 +12,10 @@ const HomeCard = () => {
     ]
     return (
         <>
-            <div className='lg:flex lg:justify-between mt-[25px] lg:flex-row md:flex md:flex-col md:justify-center items-center cursor-pointer px-3'>
+            <div className='lg:flex lg:justify-between mt-[25px] mx-2 lg:flex-row md:flex md:flex-col md:justify-center items-center cursor-pointer px-3'>
                 {
                     products.map((product, index) => (
-                        <div key={product.id} className={`lg:w-[32%] md:w-[80%] md:h-[50vh] h-[60vh] my-2 rounded-lg bg-cover bg-center bg-no-repeat xl:p-6 lg:p-2 lg:flex lg:justify-strat lg:items-start md:flex justify-center pl-2 flex-col text-slate-700 border border-slate-300 `} style={{ backgroundImage: `url(${product.img})` }}>
+                        <div key={product.id} className={`lg:w-[32%] md:w-[100%] md:h-[50vh] h-[60vh] my-2 rounded-lg bg-cover bg-center bg-no-repeat xl:p-6 lg:p-2 lg:flex lg:justify-strat lg:items-start md:flex justify-center pl-2 flex-col text-slate-700 border border-slate-300 `} style={{ backgroundImage: `url(${product.img})` }}>
                             <p className='capitalize mt-1'>{product.title}</p>
                             <h1 className='xl:text-[28px] lg:text-[22px] w-[75%] font-bold capitalize'>{product.cardBody}</h1>
                             <p className='capitalize py-1 text-xs font-semibold'> {product.cardfoot} </p>

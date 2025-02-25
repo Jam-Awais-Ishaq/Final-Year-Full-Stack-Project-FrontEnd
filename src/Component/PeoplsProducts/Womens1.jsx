@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import WomenImg from '../../images/women.png'
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { Context } from '../../ContextAPI/ContextProvider';
 const Womens1 = () => {
+
+    const { addToCartFunc } = useContext(Context)
     const [womens, setwomens] = useState([])
     const products = [
         { id: 0, img: WomenImg, title: "womens dress", price: 278 },
@@ -29,7 +32,7 @@ const Womens1 = () => {
                         <h1 className="lg:text-lg capitalize font-semibold cursor-pointer">{women.title}</h1>
                         <p className="lg:text-xl text-yellow-500 cursor-pointer"><StarBorderIcon /><StarBorderIcon /><StarBorderIcon /><StarBorderIcon /><StarBorderIcon /></p>
                         <h3 className="cursor-pointer text-2xl">${women.price}</h3>
-                        <button className="rounded-xl w-[90%] capitalize transition ease-in-out bg-slate-300 font-bold my-4 px-3 py-3 group-hover:bg-blue-900 group-hover:text-white" type="button">Add To cart</button>
+                        <button onClick={() => addToCartFunc(women)} className="rounded-xl w-[90%] capitalize transition ease-in-out bg-slate-300 font-bold my-4 px-3 py-3 group-hover:bg-blue-900 group-hover:text-white" type="button">Add To cart</button>
                     </div>
                 ))
                 }
