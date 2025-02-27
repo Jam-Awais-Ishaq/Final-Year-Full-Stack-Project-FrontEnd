@@ -12,6 +12,7 @@ import HomeComp from './Component/Pages/HomeComp';
 import Kids from './Component/PeoplsProducts/Kids';
 import ContactForm from './Component/Contact/ContactForm';
 import AiFashion from './Component/Ai Recommender/AiFeshion';
+import ProductCart from './ProductCart.html/PRoductCart';
 function App() {
   return (
     <>
@@ -28,9 +29,12 @@ function App() {
           <Route path="/new-password" element={<NewPassword />} />
           <Route path="/contact" element={<ContactForm/>}/>
           <Route path="/ai" element={<AiFashion/>}/>
+          <Route path="/productCart" element={<ProductCart/>}/>
         </Routes>
         <Footer1 />
       </Router>
+
+      {/* <ProductCart  /> */}
     </>
   );
 }

@@ -34,7 +34,7 @@ const Navbar1 = () => {
     return (
         <>
             <nav className="shadow-md">
-                <div className="bg-slate-600">
+                <div className="bg-blue-950">
                     <marquee className="text-white">Welcome to WearHub - Your Ultimate Fashion Destination!</marquee>
                 </div>
                 <div className="flex flex-wrap items-center justify-between p-2">
@@ -44,18 +44,18 @@ const Navbar1 = () => {
                     <div className="flex items-center md:order-2">
                         <div className="flex justify-between items-center md:w-[150px] w-[130px] mr-4">
                             <div className="w-fit h-fit">
-                                <CgProfile className="text-2xl text-slate-600" />
+                                <CgProfile className="text-2xl text-[#1E3A8A]" />
                             </div>
                             <div className="w-fit h-fit cursor-pointer" onClick={toggleCart} >
-                                <PiShoppingCartSimpleFill className="text-2xl" />
+                                <PiShoppingCartSimpleFill className="text-2xl text-[#1E3A8A]" />
                             </div>
-                            <Button onClick={handleChange} variant="contained" size="small">Login</Button>
+                            <Button onClick={handleChange} sx={{ backgroundColor: '#1E3A8A', '&:hover': { backgroundColor: 'blue' } }} variant="contained" size="small">Login</Button>
                         </div>
                         <button className="text-gray-500 md:hidden focus:outline-none" onClick={toggleMobileMenu}>
                             <FaBars size={24} />
                         </button>
                     </div>
-                    <div className={`${mobileMenuOpen ? "block" : "hidden"} w-full md:flex md:w-auto md:order-1`}>
+                    <div className={`${mobileMenuOpen ? "block" : "hidden"} z-50 w-full md:flex md:w-auto md:order-1`}>
                         <ul className="flex flex-col md:flex-row items-center font-medium md:space-x-8">
                             {["mens", "womens", "childrens", "ai", "contact"].map((item) => (
                                 <li key={item} className="flex items-center md:py-0 py-3">
@@ -91,5 +91,4 @@ const Navbar1 = () => {
         </> 
     );
 };
-
 export default Navbar1;

@@ -21,7 +21,7 @@ import { Context } from '../../ContextAPI/ContextProvider';
 export default function Swiper1() {
 
 
-    const {rating,handleRating,addToCartFunc } = useContext(Context);
+    const { rating, handleRating, addToCartFunc } = useContext(Context);
     const [sliderData, setSliderData] = useState([]);
 
     const slider = [
@@ -37,20 +37,22 @@ export default function Swiper1() {
     useEffect(() => {
         setSliderData(slider);
     }, []);
-    
     return (
         <div className='px-5 mt-5'>
             <Swiper slidesPerView={1} spaceBetween={30} loop={true} navigation={true} modules={[Navigation]} className="mySwiper overflow-hidden"
                 breakpoints={{ 640: { slidesPerView: 2 }, 1024: { slidesPerView: 4 } }}>
                 {sliderData.map((slide) => (
                     <SwiperSlide key={slide.id} className="border-2 px-9 rounded-lg border-slate-400 flex justify-center items-center">
-                        <div className="relative flex justify-center items-center flex-col group">
+                        <div className="relative w-full flex justify-center items-center flex-col group">
                             <img className="h-[35vh] transition-all group-hover:scale-110 duration-500 group-hover:rounded-3xl ease-in-out cursor-pointer mx-[8px] my-[20px] rounded"
                                 src={slide.img} alt={slide.title} />
                             <span className="absolute top-5 right-[-30px] group-hover:right-0 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 w-fit text-slate-600">
                                 <RemoveRedEyeIcon />
                             </span>
-                            <span className="absolute top-12 right-[-30px] group-hover:right-0 transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100 w-fit text-slate-600">
+                            <span
+                                className="absolute top-12 right-[-30px] group-hover:right-0 transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100 w-fit text-slate-600"
+                                onClick={() => addToFavorites(slide)}
+                            >
                                 <FavoriteBorderIcon />
                             </span>
                             <h1 className="lg:text-lg capitalize font-semibold cursor-pointer">{slide.title}</h1>
@@ -64,10 +66,7 @@ export default function Swiper1() {
                             </div>
                             <h3 className="cursor-pointer text-2xl">${slide.price}</h3>
                             <button onClick={() => addToCartFunc(slide)}
-                                className="rounded-xl w-[100%] capitalize transition ease-in-out bg-slate-300 font-bold my-4 px-3 py-3 group-hover:bg-blue-900 group-hover:text-white"
-                                type="button">
-                                Add To Cart
-                            </button>
+                                className="rounded-xl w-[100%] capitalize transition ease-in-out bg-slate-300 font-bold my-4 px-3 py-3 group-hover:bg-blue-950 group-hover:text-white" type="button">Add To Cart</button>
                         </div>
                     </SwiperSlide>
                 ))}

@@ -50,7 +50,7 @@ const Footer1 = () => {
                         <h1 className='font-bold lg:text-3xl md:text-2xl text-white mt-5'>Cantact us</h1>
                         <li className='w-[100%] '><a href="" className='cursor-pointer  transition ease-in-out hover:scale-90 hover:text-white'>63100,street No 1,Goheer town, bahawalpur, punjab, pakistan</a></li>
                         <li className='my-3 cursor-pointer  transition ease-in-out hover:scale-10 hover:text-white'><a href="">Email: awaisjam59@gmail.com</a></li>
-                        <li className='my-3 cursor-pointer  transition ease-in-out hover:scale-15 hover:text-white'><a href="">+92-310-78999999</a></li>
+                        <li className='my-3 cursor-pointer  transition ease-in-out hover:scale-15 hover:text-white'><a href="">+92-310-8727759</a></li>
                         <li className='flex justify-between w-[20%] '>
                             <span className='bg-[#1B212A] p-3 mx-2 rounded-xl cursor-pointer transition ease-in hover:scale-110 hover:text-white'><FaFacebookF /></span>
                             <span className='bg-[#1B212A] p-3 mx-2 rounded-xl cursor-pointer transition ease-in hover:scale-110 hover:text-white'><RiTwitterXLine /></span>
