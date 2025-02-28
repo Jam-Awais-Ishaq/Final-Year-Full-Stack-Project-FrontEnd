@@ -19,11 +19,11 @@ import { useContext, useEffect, useState } from 'react';
 import { Context } from '../../ContextAPI/ContextProvider';
 import { useNavigate } from 'react-router-dom';
 
+
 export default function Swiper1() {
-
-
-    const { rating, handleRating, addToCartFunc } = useContext(Context);
+    const { rating, handleRating, addToCartFunc, addToFavorites } = useContext(Context); // Destructure addToFavorites
     const [sliderData, setSliderData] = useState([]);
+    const navigate = useNavigate();
 
     const slider = [
         { id: 0, img: BoysApparel, title: "Child Full Dress", price: 145 },
@@ -39,11 +39,10 @@ export default function Swiper1() {
         setSliderData(slider);
     }, []);
 
-    const navigate = useNavigate()
-
-    const handleNavigate = () => {
-        navigate("/productCart")
-    }
+    const handleNavigate = (product) => {
+        addToFavorites(product)
+        navigate("/productCart");
+    };
 
     return (
         <div className='px-5 mt-5'>
@@ -58,8 +57,8 @@ export default function Swiper1() {
                                 <RemoveRedEyeIcon />
                             </span>
                             <span
-                                className="absolute top-12 right-[-30px] group-hover:right-0 transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100 w-fit text-slate-600"
-                                onClick={handleNavigate}
+                                className="absolute top-12 cursor-pointer right-[-30px] group-hover:right-0 transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100 w-fit text-slate-600"
+                                onClick={() => handleNavigate(slide)} // Add product to favorites
                             >
                                 <FavoriteBorderIcon />
                             </span>

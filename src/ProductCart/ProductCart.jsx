@@ -9,7 +9,7 @@ import img4 from "../images/homeright.jpeg";
 import "tailwindcss/tailwind.css";
 import { useNavigate } from "react-router-dom";
 
-const ProductDetails = () => {
+const ProductCart = () => {
     const [selectedSize, setSelectedSize] = useState("XXL");
     const [quantity, setQuantity] = useState(1);
     const [mainImage, setMainImage] = useState(img1);
@@ -120,11 +120,11 @@ const ProductDetails = () => {
                     ))
                 ) : (
                     <p className="text-gray-500">No reviews yet. Be the first to review this product!</p>
-                )}
+)}
             </div>
 
         </>
     );
 };
 
-export default ProductDetails;
+export default ProductCart;

@@ -7,6 +7,18 @@ const ContextProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
     const [rating, setRating] = useState({})
+    const [favorites, setFavorites] = useState([]); // New state for favorites
+
+    // Add to Favorites
+    const addToFavorites = (product) => {
+        setFavorites((prevFavorites) => {
+            const isProductInFavorites = prevFavorites.some((item) => item.id === product.id);
+            if (!isProductInFavorites) {
+                return [...prevFavorites, product]; // Add product to favorites
+            }
+            return prevFavorites; // If already in favorites, do nothing
+        });
+    };
 
     // Rating 
 
@@ -73,7 +85,6 @@ const ContextProvider = ({ children }) => {
             setTotalPrice((prevTotalPrice) => Math.max(0, prevTotalPrice - product.price * product.quantity));
         }
     };
-
     return (
         <Context.Provider value={{ addToCartFunc, increaseQuantity, decreaseQuantity, removeFromCart, cartItems, totalPrice, isOpen, setIsOpen,handleRating,rating }}>
             {children}
