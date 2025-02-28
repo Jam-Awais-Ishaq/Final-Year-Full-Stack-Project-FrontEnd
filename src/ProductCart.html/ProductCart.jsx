@@ -7,6 +7,7 @@ import img2 from "../images/olive.png";
 import img3 from "../images/peach.png";
 import img4 from "../images/homeright.jpeg";
 import "tailwindcss/tailwind.css";
+import { useNavigate } from "react-router-dom";
 
 const ProductDetails = () => {
     const [selectedSize, setSelectedSize] = useState("XXL");
@@ -25,7 +26,7 @@ const ProductDetails = () => {
             id: 0, img: img2, title: "Awais Jam", description: "I recently purchased these shoes, and I must say the quality is outstanding! The material feels premium, and the stitching is top-notch. They are not only stylish but also incredibly comfortable for long hours of wear. The durability is impressive, making them a great investment. Highly recommended for anyone looking for high-quality shoes!", time: "1 month ago", status: "verified", rating: <StarBorderIcon />
         },
         {
-            id: 1, img: img2, title: "Awais Jam", description: "I recently purchased these shoes, and I must say the quality is outstanding! The material feels premium, and the stitching is top-notch. They are not only stylish but also incredibly comfortable for long hours of wear. The durability is impressive, making them a great investment. Highly recommended for anyone looking for high-quality shoes!", time: "1 month ago", status: "verified", rating: <StarBorderIcon />
+            id: 1, img: img2, title: "Awais Jam", description: "I recently purchased these shoes, and I must say the quality is outstanding! The material feels premium, and the stitching is top-notch. They are not only stylish but also incredibly comfortable for long hours of wear. The durability is impressive, making them a great investment. Highly recommended for anyone looking for high-quality shoes!", time: "1 month ago", status: "UnVerified", rating: <StarBorderIcon />
         }
     ]
 

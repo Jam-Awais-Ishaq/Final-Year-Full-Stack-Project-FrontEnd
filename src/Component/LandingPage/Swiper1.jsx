@@ -17,6 +17,7 @@ import women from '../../images/women.png';
 import charcoal from '../../images/charcoal.png';
 import { useContext, useEffect, useState } from 'react';
 import { Context } from '../../ContextAPI/ContextProvider';
+import { useNavigate } from 'react-router-dom';
 
 export default function Swiper1() {
 
@@ -37,6 +38,13 @@ export default function Swiper1() {
     useEffect(() => {
         setSliderData(slider);
     }, []);
+
+    const navigate = useNavigate()
+
+    const handleNavigate = () => {
+        navigate("/productCart")
+    }
+
     return (
         <div className='px-5 mt-5'>
             <Swiper slidesPerView={1} spaceBetween={30} loop={true} navigation={true} modules={[Navigation]} className="mySwiper overflow-hidden"
@@ -51,7 +59,7 @@ export default function Swiper1() {
                             </span>
                             <span
                                 className="absolute top-12 right-[-30px] group-hover:right-0 transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100 w-fit text-slate-600"
-                                onClick={() => addToFavorites(slide)}
+                                onClick={handleNavigate}
                             >
                                 <FavoriteBorderIcon />
                             </span>
