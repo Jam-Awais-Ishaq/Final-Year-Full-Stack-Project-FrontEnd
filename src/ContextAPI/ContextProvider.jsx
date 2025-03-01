@@ -7,29 +7,22 @@ const ContextProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
     const [rating, setRating] = useState({})
-    const [favorites, setFavorites] = useState([]); // New state for favorites
-
-    // Add to Favorites
+    const [favorites, setFavorites] = useState([]);
     const addToFavorites = (product) => {
         setFavorites((prevFavorites) => {
             const isProductInFavorites = prevFavorites.some((item) => item.id === product.id);
             if (!isProductInFavorites) {
-                return [...prevFavorites, product]; // Add product to favorites
+                return [...prevFavorites, product]; 
             }
-            return prevFavorites; // If already in favorites, do nothing
+            return prevFavorites; 
         });
     };
-
-    // Rating 
-
     const handleRating = (productId, ratingValue) => {
         setRating((prevRatings) => ({
             ...prevRatings,
             [productId]: ratingValue
         }));
     };
-
-
     const addToCartFunc = (product) => {
         setCartItems((prevCartItems) => {
             const existingItem = prevCartItems.find((item) => item.id === product.id);
@@ -44,22 +37,17 @@ const ContextProvider = ({ children }) => {
 
         setTotalPrice((prevTotalPrice) => prevTotalPrice + product.price);
     };
-
-    // Increase Quantity
     const increaseQuantity = (id) => {
         setCartItems((prevCartItems) =>
             prevCartItems.map((item) =>
                 item.id === id ? { ...item, quantity: item.quantity + 1 } : item
             )
         );
-
         const product = cartItems.find((item) => item.id === id);
         if (product) {
             setTotalPrice((prevTotalPrice) => prevTotalPrice + product.price);
         }
     };
-
-    // Decrease Quantity (Minimum 1)
     const decreaseQuantity = (id) => {
         setCartItems((prevCartItems) =>
             prevCartItems.map((item) => {
@@ -69,27 +57,22 @@ const ContextProvider = ({ children }) => {
                 return item;
             })
         );
-
         const product = cartItems.find((item) => item.id === id);
         if (product && product.quantity > 1) {
             setTotalPrice((prevTotalPrice) => Math.max(0, prevTotalPrice - product.price));
         }
     };
-
-    // **Remove Product from Cart**
     const removeFromCart = (id) => {
         setCartItems((prevCartItems) => prevCartItems.filter((item) => item.id !== id));
-
         const product = cartItems.find((item) => item.id === id);
         if (product) {
             setTotalPrice((prevTotalPrice) => Math.max(0, prevTotalPrice - product.price * product.quantity));
         }
     };
     return (
-        <Context.Provider value={{ addToCartFunc, increaseQuantity, decreaseQuantity, removeFromCart, cartItems, totalPrice, isOpen, setIsOpen,handleRating,rating }}>
+        <Context.Provider value={{ addToCartFunc, increaseQuantity, decreaseQuantity, addToFavorites,favorites,removeFromCart, cartItems, totalPrice, isOpen, setIsOpen,handleRating,rating }}>
             {children}
         </Context.Provider>
     );
 };
-
 export default ContextProvider;

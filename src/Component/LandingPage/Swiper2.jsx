@@ -20,7 +20,7 @@ import { Context } from '../../ContextAPI/ContextProvider';
 import { useNavigate } from 'react-router-dom';
 
 export default function Swiper2() {
-    const { addToCartFunc, rating, handleRating } = useContext(Context);
+    const { addToCartFunc, rating, handleRating,addToFavorites } = useContext(Context);
     const [sliderDate, setSliderDate] = useState([]);
     const slider = [
         { id: 0, img: women, title: "Shalwar Kameez", off: "50%", price: 145 },
@@ -38,7 +38,8 @@ export default function Swiper2() {
 
     const navigate = useNavigate();
 
-    const handleNavigate = () => {
+    const handleNavigate = (product) => {
+        addToFavorites(product)
         navigate('/productCart');
     };
 
@@ -71,7 +72,7 @@ export default function Swiper2() {
                             <span className="absolute top-5  right-[-30px] group-hover:right-0 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 w-fit text-slate-600">
                                 <RemoveRedEyeIcon />
                             </span>
-                            <span className="absolute top-12  right-[-30px] group-hover:right-0 transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100 w-fit text-slate-600">
+                            <span onClick={() => handleNavigate(slide)} className="absolute top-12  right-[-30px] group-hover:right-0 transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100 w-fit text-slate-600 cursor-pointer">
                                 <FavoriteBorderIcon />
                             </span>
 

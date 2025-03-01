@@ -19,7 +19,6 @@ import { useContext, useEffect, useState } from 'react';
 import { Context } from '../../ContextAPI/ContextProvider';
 import { useNavigate } from 'react-router-dom';
 
-
 export default function Swiper1() {
     const { rating, handleRating, addToCartFunc, addToFavorites } = useContext(Context); // Destructure addToFavorites
     const [sliderData, setSliderData] = useState([]);
@@ -34,16 +33,13 @@ export default function Swiper1() {
         { id: 5, img: women, title: "Shalwar Kameez", price: 145 },
         { id: 6, img: charcoal, title: "Charcoal T-Shirt", price: 145 },
     ];
-
     useEffect(() => {
         setSliderData(slider);
     }, []);
-
     const handleNavigate = (product) => {
         addToFavorites(product)
         navigate("/productCart");
     };
-
     return (
         <div className='px-5 mt-5'>
             <Swiper slidesPerView={1} spaceBetween={30} loop={true} navigation={true} modules={[Navigation]} className="mySwiper overflow-hidden"

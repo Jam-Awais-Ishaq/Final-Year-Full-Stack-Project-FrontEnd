@@ -13,7 +13,6 @@ import Kids from './Component/PeoplsProducts/Kids';
 import ContactForm from './Component/Contact/ContactForm';
 import AiFashion from './Component/Ai Recommender/AiFeshion';
 import ProductCart from './ProductCart/ProductCart';
-// import ProductCart from './ProductCart.html/PRoductCart';
 function App() {
   return (
     <>
