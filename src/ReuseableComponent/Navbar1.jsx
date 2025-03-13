@@ -82,7 +82,7 @@ const Navbar1 = () => {
             {cartOpen && (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: cartOpen ? 0.5 : 0 }} exit={{ opacity: 0, transition: { duration: 0.7, ease: "easeInOut" } }} transition={{ duration: 0.5, ease: "easeInOut" }} className="fixed inset-0 bg-black z-40 pointer-events-auto" onClick={toggleCart}></motion.div>
             )}
-            <motion.div initial={{ x: "100%", opacity: 0 }} animate={{ x: cartOpen ? "0%" : "100%", opacity: cartOpen ? 1 : 0 }} exit={{ x: "100%", opacity: 0 }} transition={{ duration: 0.5, ease: "easeInOut" }} className="fixed right-0 top-0 w-[40%] shadow-slate-950 h-screen bg-white z-50 shadow-xl" onClick={(e) => e.stopPropagation()}>
+            <motion.div initial={{ x: "100%", opacity: 0 }} animate={{ x: cartOpen ? "0%" : "100%", opacity: cartOpen ? 1 : 0 }} exit={{ x: "100%", opacity: 0 }} transition={{ duration: 0.5, ease: "easeInOut" }} className="fixed right-0 top-0 md:w-[45%] w-[75%] shadow-slate-950 h-screen bg-white z-50 shadow-xl" onClick={(e) => e.stopPropagation()}>
 
                 <IconButton aria-label="close" onClick={toggleCart} sx={(theme) => ({ position: 'absolute', right: 3, top: 5, color: theme.palette.grey[500], transition: 'background-color 0.3s ease, color 0.3s ease', '&:hover': { backgroundColor: theme.palette.grey[800], color: theme.palette.common.white, }, })}><CloseIcon /></IconButton>
 

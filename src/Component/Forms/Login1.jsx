@@ -3,7 +3,7 @@ import { MdHome } from "react-icons/md";
 import google from '../../images/google.png';
 import playstore from '../../images/playstore.png';
 import NewPassword from './NewPassword';
-import { Link, useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import Register1 from './Register1';
 
 const Login1 = () => {
@@ -67,9 +67,15 @@ const Login1 = () => {
     const handleLogin = () =>{
         setIsToggle(false)
     }
-
     if (isToggle) {
         return <Register1 handleLogin={handleLogin}/>
+    }
+
+    const navigate = useNavigate()
+    const handleNavigate =()=>{
+        if (email === password) {
+            navigate("/myComponent")
+        }
     }
     return (
         <div >

@@ -10,8 +10,8 @@ const ContactForm = () => {
         {/* Left Section */}
         <div className="md:w-1/2">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">Contact us</h2>
-          <p className="text-gray-400 mb-6 text-sm sm:text-base">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit amet diam et est pharetra porttitor libero netus nulla tempor.
+          <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-500">
+            You can also connect with us via email or phone. We're here to assist you every step of the way.
           </p>
           <div className="space-y-4">
             <a href="#" className="flex items-center gap-3 bg-gray-500 text-white px-4 py-2 rounded-md transition hover:bg-gray-600">
@@ -135,8 +135,8 @@ const ContactForm = () => {
       {/* Bottom Section */}
       <div className="text-center text-gray-400 mt-8">
         <h3 className="text-xl font-semibold">Prefer to reach out directly?</h3>
-        <p className="mt-2 text-sm sm:text-base">
-          UI enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        <p className="text-gray-400 mb-6 text-sm sm:text-base">
+          Get in touch with us! We'd love to hear your feedback and questions. We ll try to respond as soon as possible.
         </p>
       </div>
     </div>

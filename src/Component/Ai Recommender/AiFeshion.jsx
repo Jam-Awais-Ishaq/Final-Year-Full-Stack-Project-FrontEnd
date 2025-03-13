@@ -2,7 +2,6 @@ import { Autocomplete, FormControl, FormControlLabel, FormLabel, Radio, RadioGro
 import React, { useState } from 'react';
 
 function AiFashion() {
-  // Single state object to manage all form inputs
   const [formState, setFormState] = useState({
     height: '',
     weight: null,
@@ -11,7 +10,7 @@ function AiFashion() {
   });
 
   const [generatedImage, setGeneratedImage] = useState(null);
-  const [isLoading, setIsLoading] = useState(false); 
+  const [isLoading, setIsLoading] = useState(false);
 
   const weightOptions = [
     { title: '50 kg' }, { title: '55 kg' }, { title: '60 kg' },
@@ -41,20 +40,21 @@ function AiFashion() {
       console.log('Prompt:', prompt);
 
       const mockImageUrl = `https://via.placeholder.com/400?text=${encodeURIComponent(prompt)}`;
-      setGeneratedImage(mockImageUrl); 
+      setGeneratedImage(mockImageUrl);
     } catch (error) {
       console.error('Error generating image:', error);
       alert('Failed to generate image. Please try again.');
     } finally {
-      setIsLoading(false); 
+      setIsLoading(false);
     }
   };
 
   return (
     <div className="min-h-screen flex flex-col items-center p-4 md:p-8 bg-gray-100">
       <div className="w-full max-w-4xl bg-white p-6 rounded-lg shadow-lg">
-        <div className="flex flex-col md:flex-row text-black gap-6">
-          <form className="md:w-1/2 space-y-4">
+        <div className="flex flex-col md:flex-row gap-6">
+          {/* Form Section */}
+          <form className="w-full md:w-1/2 space-y-4">
             {/* Height Input */}
             <TextField
               label="Height (cm)"
@@ -98,30 +98,30 @@ function AiFashion() {
             <button
               type="button"
               onClick={handleRecommendation}
-              disabled={isLoading} // Disable button while loading
-              className="w-full bg-blue-500 text-white shadow-lg shadow-slate-700 px-4 py-2 rounded-md hover:bg-blue-600 disabled:bg-blue-300"
+              disabled={isLoading}
+              className="w-full bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 disabled:bg-blue-300 transition duration-300"
             >
               {isLoading ? 'Generating...' : 'Get AI Recommendation'}
             </button>
           </form>
 
           {/* Result Section */}
-          <div className="md:w-1/2 flex items-center shadow-lg shadow-slate-500 justify-center bg-gray-200  rounded-lg">
+          <div className="w-full md:w-1/2 flex items-center justify-center bg-gray-200 rounded-lg p-4">
             {generatedImage ? (
               <img
                 src={generatedImage}
                 alt="Generated Fashion"
-                className="w-full h-full object-cover rounded-lg"
+                className="w-full h-auto object-cover rounded-lg"
               />
             ) : (
-              <p className="text-gray-600 ">Here is your image</p>
+              <p className="text-gray-600">Here is your image</p>
             )}
           </div>
         </div>
 
         {/* Additional Info Section */}
-        <div className="mt-6 bg-gray-50 p-4 rounded-lg text-gray-700 border-2 shadow-lg shadow-slate-400">
-          <h1 className='text-2xl border-b-2 border-slate-500 mb-4 w-fit'>Image description</h1>
+        <div className="mt-6 bg-gray-50 p-4 rounded-lg text-gray-700 border border-gray-300">
+          <h1 className="text-2xl font-semibold border-b-2 border-gray-500 mb-4">Image Description</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit ex, nesciunt corporis quibusdam nemo error.</p>
         </div>
       </div>

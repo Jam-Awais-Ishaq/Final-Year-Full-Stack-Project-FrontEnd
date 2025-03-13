@@ -13,6 +13,7 @@ import Kids from './Component/PeoplsProducts/Kids';
 import ContactForm from './Component/Contact/ContactForm';
 import AiFashion from './Component/Ai Recommender/AiFeshion';
 import ProductCart from './ProductCart/ProductCart';
+import MyComponent from './Profile/MyComponent';
 function App() {
   return (
     <>
@@ -30,11 +31,11 @@ function App() {
           <Route path="/contact" element={<ContactForm/>}/>
           <Route path="/ai" element={<AiFashion/>}/>
           <Route path="/productCart" element={<ProductCart />}/>
+          <Route path="/myComponent" element={<MyComponent />}/>
         </Routes>
         <Footer1 />
       </Router>
 
-      {/* <ProductCart  /> */}
     </>
   );
 }
