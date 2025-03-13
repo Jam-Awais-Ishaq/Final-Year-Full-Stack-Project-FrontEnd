@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { FaPencilAlt, FaBell, FaUserCircle, FaFacebook, FaTwitter, FaInstagram, FaGoogle, FaEye, FaEyeSlash } from 'react-icons/fa';
-
 const PasswordInput = ({ label, defaultValue }) => {
   const [showPassword, setShowPassword] = useState(false);
   return (
@@ -14,19 +13,15 @@ const PasswordInput = ({ label, defaultValue }) => {
     </div>
   );
 };
-const MyComponent = () => {
-
+const Profile = () => {
   const [isLeftDivVisible, setLeftDivVisible] = useState(false);
   const [isMobileView, setIsMobileView] = useState(false);
-
   const toggleLeftDiv = () => {
     setLeftDivVisible(!isLeftDivVisible);
   };
-
   const checkMobileView = () => {
     setIsMobileView(window.innerWidth < 768);
   };
-
   useEffect(() => {
     checkMobileView();
     window.addEventListener('resize', checkMobileView);
@@ -34,7 +29,6 @@ const MyComponent = () => {
       window.removeEventListener('resize', checkMobileView);
     };
   }, []);
-
   return (
     <div className="flex flex-col min-h-screen">
       <div className="bg-pink-600 md:hidden block p-4">
@@ -117,4 +111,4 @@ const MyComponent = () => {
     </div>
   );
 };
-export default MyComponent;
+export default Profile;

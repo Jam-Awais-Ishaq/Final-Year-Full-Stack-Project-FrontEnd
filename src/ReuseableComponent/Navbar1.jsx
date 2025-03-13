@@ -44,7 +44,7 @@ const Navbar1 = () => {
                     <div className="flex items-center md:order-2">
                         <div className="flex justify-between items-center md:w-[150px] w-[130px] mr-4">
                             <div className="w-fit h-fit">
-                                <CgProfile className="text-2xl text-[#1E3A8A]" />
+                                <Link to='profile'><CgProfile className="text-2xl text-[#1E3A8A]" /></Link>
                             </div>
                             <div className="w-fit h-fit cursor-pointer" onClick={toggleCart} >
                                 <PiShoppingCartSimpleFill className="text-2xl text-[#1E3A8A]" />
@@ -55,7 +55,7 @@ const Navbar1 = () => {
                             <FaBars size={24} />
                         </button>
                     </div>
-                    <div className={`${mobileMenuOpen ? "block" : "hidden"} z-50 w-full md:flex md:w-auto md:order-1`}>
+                    <div className={` z-50 w-full md:flex md:w-auto md:order-1 transition-all duration-500 ease-in-out ${mobileMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 overflow-hidden`}>
                         <ul className="flex flex-col md:flex-row items-center font-medium md:space-x-8">
                             {["mens", "womens", "childrens", "ai", "contact"].map((item) => (
                                 <li key={item} className="flex items-center md:py-0 py-3">
@@ -67,6 +67,7 @@ const Navbar1 = () => {
                             ))}
                         </ul>
                     </div>
+
                 </div>
             </nav>
 
@@ -88,7 +89,7 @@ const Navbar1 = () => {
 
                 <AddToCart />
             </motion.div >
-        </> 
+        </>
     );
 };
 export default Navbar1;
