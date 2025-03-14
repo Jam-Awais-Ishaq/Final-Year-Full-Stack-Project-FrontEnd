@@ -70,13 +70,6 @@ const Login1 = () => {
     if (isToggle) {
         return <Register1 handleLogin={handleLogin}/>
     }
-
-    const navigate = useNavigate()
-    const handleNavigate =()=>{
-        if (email === password) {
-            navigate("/myComponent")
-        }
-    }
     return (
         <div >
             {showNewPassword ? (
