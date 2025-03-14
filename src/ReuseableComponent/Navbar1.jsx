@@ -39,7 +39,7 @@ const Navbar1 = () => {
                 </div>
                 <div className="flex flex-wrap items-center justify-between p-2">
                     <Link to="/" className="flex items-center">
-                        <span className="self-center text-2xl ml-3 font-bold text-slate-500">WearHub</span>
+                        <span className="self-center text-2xl font-bold text-slate-500">WearHub</span>
                     </Link>
                     <div className="flex items-center md:order-2">
                         <div className="flex justify-between items-center md:w-[150px] w-[130px] mr-4">
@@ -73,11 +73,16 @@ const Navbar1 = () => {
 
             {toggle && (
                 <div className="fixed inset-0 z-50 w-full flex justify-center items-center bg-black bg-opacity-80">
-                    <div className="relative bg-white rounded-2xl border-2 border-slate-600 shadow-xl">
-                        <button className="absolute top-1 flex justify-center items-center rounded-md bg-slate-100 border h-6 w-6 p-3 right-1 text-gray-700" onClick={handleClose}>X</button>
+                    <div className="relative bg-white rounded-2xl border-2 border-slate-600 shadow-xl w-[70%]]">
+                        <button
+                            className="absolute top-2 right-2 flex justify-center items-center rounded-md bg-slate-100 border h-6 w-6 p-3 text-gray-700 hover:bg-slate-200"
+                            onClick={handleClose}>
+                            X
+                        </button>
                         <Login1 />
                     </div>
                 </div>
+
             )}
 
             {cartOpen && (

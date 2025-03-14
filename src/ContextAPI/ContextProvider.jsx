@@ -8,6 +8,7 @@ const ContextProvider = ({ children }) => {
     const [totalPrice, setTotalPrice] = useState(0);
     const [rating, setRating] = useState({})
     const [favorites, setFavorites] = useState([]);
+
     const addToFavorites = (product) => {
         setFavorites((prevFavorites) => {
             const isProductInFavorites = prevFavorites.some((item) => item.id === product.id);
@@ -17,12 +18,14 @@ const ContextProvider = ({ children }) => {
             return prevFavorites; 
         });
     };
+
     const handleRating = (productId, ratingValue) => {
         setRating((prevRatings) => ({
             ...prevRatings,
             [productId]: ratingValue
         }));
     };
+
     const addToCartFunc = (product) => {
         setCartItems((prevCartItems) => {
             const existingItem = prevCartItems.find((item) => item.id === product.id);
@@ -37,6 +40,7 @@ const ContextProvider = ({ children }) => {
 
         setTotalPrice((prevTotalPrice) => prevTotalPrice + product.price);
     };
+
     const increaseQuantity = (id) => {
         setCartItems((prevCartItems) =>
             prevCartItems.map((item) =>
@@ -48,6 +52,7 @@ const ContextProvider = ({ children }) => {
             setTotalPrice((prevTotalPrice) => prevTotalPrice + product.price);
         }
     };
+
     const decreaseQuantity = (id) => {
         setCartItems((prevCartItems) =>
             prevCartItems.map((item) => {
@@ -62,6 +67,7 @@ const ContextProvider = ({ children }) => {
             setTotalPrice((prevTotalPrice) => Math.max(0, prevTotalPrice - product.price));
         }
     };
+
     const removeFromCart = (id) => {
         setCartItems((prevCartItems) => prevCartItems.filter((item) => item.id !== id));
         const product = cartItems.find((item) => item.id === id);
@@ -69,6 +75,7 @@ const ContextProvider = ({ children }) => {
             setTotalPrice((prevTotalPrice) => Math.max(0, prevTotalPrice - product.price * product.quantity));
         }
     };
+    
     return (
         <Context.Provider value={{ addToCartFunc, increaseQuantity, decreaseQuantity, addToFavorites,favorites,removeFromCart, cartItems, totalPrice, isOpen, setIsOpen,handleRating,rating }}>
             {children}

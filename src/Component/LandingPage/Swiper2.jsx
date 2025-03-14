@@ -23,13 +23,13 @@ export default function Swiper2() {
     const { addToCartFunc, rating, handleRating,addToFavorites } = useContext(Context);
     const [sliderDate, setSliderDate] = useState([]);
     const slider = [
-        { id: 0, img: women, title: "Shalwar Kameez", off: "50%", price: 145 },
-        { id: 1, img: whiteimg, title: "White T-shirt", off: "50%", price: 145 },
-        { id: 2, img: peach, title: "Olive T-shirt", off: "50%", price: 145 },
-        { id: 3, img: BoysApparel, title: "Kids Full Dress", off: "50%", price: 145 },
-        { id: 4, img: charcoal, title: "Charcoal T-shirt", off: "50%", price: 145 },
-        { id: 5, img: sliderImage, title: "Pent Shirt", off: "50%", price: 145 },
-        { id: 6, img: peachFeshion, title: "Peach Fashion T-shirt", off: "50%", price: 145 },
+        { id: 0, img: women, title: "Shalwar Kameez", off: "50%", price: 70 },
+        { id: 1, img: whiteimg, title: "White T-shirt", off: "50%", price: 70 },
+        { id: 2, img: peach, title: "Olive T-shirt", off: "50%", price: 70 },
+        { id: 3, img: BoysApparel, title: "Kids Full Dress", off: "50%", price: 70 },
+        { id: 4, img: charcoal, title: "Charcoal T-shirt", off: "50%", price: 70 },
+        { id: 5, img: sliderImage, title: "Pent Shirt", off: "50%", price: 70 },
+        { id: 6, img: peachFeshion, title: "Peach Fashion T-shirt", off: "50%", price: 70 },
     ];
 
     useEffect(() => {

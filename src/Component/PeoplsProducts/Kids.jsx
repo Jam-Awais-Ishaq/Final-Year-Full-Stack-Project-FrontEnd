@@ -3,17 +3,15 @@ import { FaRegHeart, FaRegEyeSlash, FaStar } from "react-icons/fa"; // Importing
 import img1 from "../../images/BoysApparel2.png";
 import { useContext } from "react";
 import { Context } from "../../ContextAPI/ContextProvider";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Kids() {
-  const { addToCartFunc } = useContext(Context)
+  const { addToCartFunc, addToFavorites } = useContext(Context)
   const [kids, setKids] = useState([])
-
-
   useEffect(() => {
     setKids(products)
   }, [])
-
   let products = [
     {
       id: "1",
@@ -80,6 +78,12 @@ export default function Kids() {
     },
   ];
 
+  const navigate = useNavigate()
+  const handleNavigate = (product) => {
+    addToFavorites(product)
+    navigate("/productCart")
+}
+
   return (
     <div className="flex justify-center items-center bg-gray-100 p-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
@@ -95,7 +99,7 @@ export default function Kids() {
                   </p>
                 </div>
                 <div className="absolute top-4 right-4 flex flex-col space-y-2 opacity-0 translate-x-8 transition-all duration-500 ease-in-out group-hover:translate-x-0 group-hover:opacity-100">
-                  <button className=" p-2 rounded-full shadow-lg transition delay-100 opacity-0 group-hover:opacity-100 group-hover:delay-100">
+                  <button onClick={() => handleNavigate(kid)} className=" p-2 rounded-full shadow-lg transition delay-100 opacity-0 group-hover:opacity-100 group-hover:delay-100">
                     <FaRegHeart className="text-white text-lg" />
                   </button>
                   <button className=" p-2 rounded-full shadow-lg transition duration-200 opacity-0 group-hover:opacity-100 group-hover:duration-200">

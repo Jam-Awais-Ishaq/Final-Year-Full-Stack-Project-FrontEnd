@@ -14,6 +14,7 @@ import ContactForm from './Component/Contact/ContactForm';
 import AiFashion from './Component/Ai Recommender/AiFeshion';
 import ProductCart from './ProductCart/ProductCart';
 import Profile from './Profile/Profile';
+import Receipt from './ReceiptFLD/Receipt';
 function App() {
   return (
     <>
@@ -32,10 +33,10 @@ function App() {
           <Route path="/ai" element={<AiFashion/>}/>
           <Route path="/productCart" element={<ProductCart />}/>
           <Route path="/profile" element={<Profile />}/>
+          <Route path="/receipt" element={<Receipt />}/>
         </Routes>
         <Footer1 />
       </Router>
-
     </>
   );
 }
