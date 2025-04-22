@@ -3,7 +3,6 @@ import { MdHome } from "react-icons/md";
 import google from '../../images/google.png';
 import playstore from '../../images/playstore.png';
 import NewPassword from './NewPassword';
-import {useNavigate} from 'react-router-dom';
 import Register1 from './Register1';
 
 const Login1 = () => {
@@ -36,7 +35,6 @@ const Login1 = () => {
         }
 
         try {
-            // Simulating API call delay
             setTimeout(() => {
                 setSuccess("Logged in successfully");
                 setEmail(""); 
