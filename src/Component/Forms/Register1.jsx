@@ -76,13 +76,13 @@ const Register1 = ({handleClose}) => {
 
     return (
 
-        <div className='p-4 fixed inset-0 mt-1 w-[400px] h-[98vh] max-w-md mx-auto border border-slate-500 bg-white rounded-2xl'>
+        <div className='p-4 fixed inset-0 mt-1 w-[450px] h-[98vh] max-w-md mx-auto border border-slate-500 bg-white rounded-2xl'>
             <button onClick={handleToggle} className='absolute md:right-0 right-3 md:top-0 top-1 bg-slate-300 p-4 h-4 w-4 flex justify-center items-center rounded-2xl'>X</button>
             <div className="flex items-center justify-start ml-5 mb-5">
                 <span className='relative border-2 p-2 border-[#0d1222] bg-slate-200 text-[#0d1222] rounded-full text-2xl'>
                     <MdHome />
                 </span>
-                <span className='absolute left-[18%] font-bold bg-[#131a2f] px-5 py-1 border rounded-2xl text-white'>
+                <span className='absolute left-[16%] font-bold bg-[#131a2f] px-5 py-1 border rounded-2xl text-white'>
                     WearHub
                 </span>
             </div>
