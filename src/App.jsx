@@ -15,29 +15,43 @@ import AiFashion from './Component/Ai Recommender/AiFeshion';
 import ProductCart from './ProductCart/ProductCart';
 import Profile from './Profile/Profile';
 import Receipt from './ReceiptFLD/Receipt';
+import VerifyEmail from './Component/Forms/VerifyEmail';
+import ProtectedRoute from './Component/Auth/ProtectedRoute';
+import Chat from '../Chat/Chat';
+
 function App() {
+
   return (
     <>
-      <Router>
-        <Navbar1 />
-        <Routes>
-          <Route path="/" element={<HomeComp />} />
-          <Route path="/mens" element={<Mens />} />
-          <Route path="/womens" element={<Womens1 />} />
-          <Route path='/childrens' element={<Kids/>}/>
-          <Route path="/forget-password" element={<ForgetPassword />} />
-          <Route path="/login" element={<Login1 />} />
-          <Route path='/register1' element={<Register1 />} />
-          <Route path="/new-password" element={<NewPassword />} />
-          <Route path="/contact" element={<ContactForm/>}/>
-          <Route path="/ai" element={<AiFashion/>}/>
-          <Route path="/productCart" element={<ProductCart />}/>
-          <Route path="/profile" element={<Profile />}/>
-          <Route path="/receipt" element={<Receipt />}/>
-        </Routes>
-        <Footer1 />
-      </Router>
+      <div className=''>
+        <Router>
+          <Navbar1 />
+          <Routes>
+            <Route path="/" element={<HomeComp />} />
+            <Route path="/forget-password" element={<ForgetPassword />} />
+            <Route path="/login" element={<Login1 />} />
+            <Route path="/register1" element={<Register1 />} />
+            <Route path="/reset-password/:token" element={<NewPassword />} />
+            <Route path="/verifyEmail" element={<VerifyEmail />} />
+
+            {/* All protected routes below */}
+            <Route path="/mens" element={<ProtectedRoute><Mens /></ProtectedRoute>} />
+            <Route path="/womens" element={<ProtectedRoute><Womens1 /></ProtectedRoute>} />
+            <Route path="/childrens" element={<ProtectedRoute><Kids /></ProtectedRoute>} />
+            <Route path="/contact" element={<ProtectedRoute><ContactForm /></ProtectedRoute>} />
+            <Route path="/ai" element={<ProtectedRoute><AiFashion /></ProtectedRoute>} />
+            <Route path="/productCart" element={<ProtectedRoute><ProductCart /></ProtectedRoute>} />
+            <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+            <Route path="/receipt" element={<ProtectedRoute><Receipt /></ProtectedRoute>} />
+          </Routes>
+          <Footer1 />
+        </Router>
+      </div>
+      <div className='fixed bottom-0 right-0 z-50'>
+        <Chat />
+      </div>
     </>
   );
 }
+
 export default App;

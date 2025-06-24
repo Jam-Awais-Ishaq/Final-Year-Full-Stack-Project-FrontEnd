@@ -119,5 +119,4 @@ const ForgetPassword = () => {
     </div>
   );
 };
-
 export default ForgetPassword;

@@ -1,123 +1,104 @@
-import React, { useEffect, useState } from "react";
-import { FaRegHeart, FaRegEyeSlash, FaStar } from "react-icons/fa"; // Importing the Star icon
-import img1 from "../../images/BoysApparel2.png";
-import { useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { FaRegHeart, FaRegEyeSlash, FaStar } from "react-icons/fa";
 import { Context } from "../../ContextAPI/ContextProvider";
 import { useNavigate } from "react-router-dom";
-
+import axios from "axios";
 
 export default function Kids() {
-  const { addToCartFunc, addToFavorites } = useContext(Context)
-  const [kids, setKids] = useState([])
-  useEffect(() => {
-    setKids(products)
-  }, [])
-  let products = [
-    {
-      id: "1",
-      img: img1,
-      title: "Delicious",
-      description: "A tasty and fresh fruit for a healthy diet.",
-      price: 19.99,
-    },
-    {
-      id: "2",
-      img: img1,
-      title: "Whitedress",
-      description: "The goal of writing image descriptions is to be clear and concise.",
-      price: 100,
-    },
-    {
-      id: "3",
-      img: img1,
-      title: "Delicious",
-      description: "A tasty and fresh fruit for a healthy diet.",
-      price: 19.99,
-    },
-    {
-      id: "4",
-      img: img1,
-      title: "Whitedress",
-      description: "The goal of writing image descriptions is to be clear and concise.",
-      price: 100,
-    },
-    {
-      id: "5",
-      img: img1,
-      title: "Delicious",
-      description: "A tasty and fresh fruit for a healthy diet.",
-      price: 19.99,
-    },
-    {
-      id: "6",
-      img: img1,
-      title: "Whitedress",
-      description: "The goal of writing image descriptions is to be clear and concise.",
-      price: 100,
-    },
-    {
-      id: "7",
-      img: img1,
-      title: "Delicious",
-      description: "A tasty and fresh fruit for a healthy diet.",
-      price: 19.99,
-    },
-    {
-      id: "8",
-      img: img1,
-      title: "Whitedress",
-      description: "The goal of writing image descriptions is to be clear and concise.",
-      price: 100,
-    },
-    {
-      id: "9",
-      img: img1,
-      title: "Delicious",
-      description: "A tasty and fresh fruit for a healthy diet.",
-      price: 19.99,
-    },
-  ];
+  const { addToCartFunc, addToFavorites, placeOrderFunc } = useContext(Context);
+  const [kids, setKids] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const navigate = useNavigate()
-  const handleNavigate = (product) => {
-    addToFavorites(product)
-    navigate("/productCart")
-}
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/api/admin/products/category/kids", {
+          headers: {
+            'Cache-Control': 'no-cache',
+            'Pragma': 'no-cache',
+            'Expires': '0'
+          },
+          params: {
+            timestamp: Date.now()
+          }
+        });
+        const kidsWithId = response.data.map(kid => ({
+          ...kid,
+          id: kid._id,
+          img: kid.image // Ensure img property exists
+        }));
+
+        setKids(kidsWithId);
+      } catch (error) {
+        console.log("Error in Kids Section", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchProduct();
+  }, []);
+
+  const navigate = useNavigate();
+
+  const handleFavoriteClick = async (product) => {
+    try {
+      const productToAdd = {
+        ...product,
+        img: product.image,
+        id: product._id || product.id
+      };
+
+      await addToFavorites(productToAdd);
+      console.log("Product added to favorites:", productToAdd);
+      navigate("/productCart");
+    } catch (error) {
+      console.error("Error adding to favorites:", error);
+    }
+  };
+
+  if (loading) {
+    return <div className="text-center py-8">Loading...</div>;
+  }
 
   return (
-    <div className="flex justify-center items-center bg-gray-100 p-4">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
-        {kids.map((kid) => {
-          return (
-            <div key={kid.id} className="bg-slate-300 shadow-lg rounded-lg relative group">
-              <div className="relative overflow-hidden rounded-">
-                <img src={kid.img} alt={kid.text} className="w-full object-cover rounded-lg" />
-                <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center opacity-0 translate-y-full transition-all duration-500 ease-in-out group-hover:translate-y-0 group-hover:opacity-100">
-                  <h2 className="text-white text-lg font-bold">{kid.title}</h2>
-                  <p className="text-white text-xl font-bold ">
-                    ${kid.price}
-                  </p>
-                </div>
-                <div className="absolute top-4 right-4 flex flex-col space-y-2 opacity-0 translate-x-8 transition-all duration-500 ease-in-out group-hover:translate-x-0 group-hover:opacity-100">
-                  <button onClick={() => handleNavigate(kid)} className=" p-2 rounded-full shadow-lg transition delay-100 opacity-0 group-hover:opacity-100 group-hover:delay-100">
-                    <FaRegHeart className="text-white text-lg" />
-                  </button>
-                  <button className=" p-2 rounded-full shadow-lg transition duration-200 opacity-0 group-hover:opacity-100 group-hover:duration-200">
-                    <FaRegEyeSlash className="text-white text-lg" />
-                  </button>
-                  <button className=" p-2 rounded-full shadow-lg transition delay-300 opacity-0 group-hover:opacity-100 group-hover:duration-300">
-                    <FaStar className="text-yellow-500 text-lg" />
-                  </button>
-                </div>
-              </div>
-              <div className="p-4 text-center">
-                <button onClick={() => addToCartFunc(kid)} className="w-[100%] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300">
-                  Add to Cart
+    <div className="my-5 bg-gray-100 ml-5">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {kids.map((kid) => (
+          <div key={kid._id} className="bg-white border border-slate-400 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+            <div className="relative group">
+              <img
+                src={kid.image.startsWith('http') ? kid.image : `http://localhost:5000${kid.image}`}
+                alt={kid.title || "Kids Product"}
+                className="w-full h-[370px] object-cover"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-300 flex justify-center items-center gap-3">
+                <button
+                  onClick={() => handleFavoriteClick(kid)}
+                  className="bg-white p-2 rounded-full shadow hover:scale-110 transition"
+                >
+                  <FaRegHeart className="text-red-500 text-xl" />
+                </button>
+                <button className="bg-white p-2 rounded-full shadow hover:scale-110 transition">
+                  <FaRegEyeSlash className="text-blue-500 text-xl" />
+                </button>
+                <button className="bg-white p-2 rounded-full shadow hover:scale-110 transition">
+                  <FaStar className="text-yellow-500 text-xl" />
                 </button>
               </div>
             </div>
-          );
-        })}
+
+            <div className="p-4">
+              <h3 className="text-lg font-semibold text-gray-800 truncate">{kid.name}</h3>
+              <p className="text-blue-500 text-lg font-bold mb-3">${kid.price}</p>
+              <button
+                onClick={() => addToCartFunc(kid)}
+                className="w-full bg-gradient-to-r bg-green-500 py-2 rounded-xl hover:bg-green-600 text-white hover:from-blue-600 hover:to-indigo-700 transition duration-300"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
