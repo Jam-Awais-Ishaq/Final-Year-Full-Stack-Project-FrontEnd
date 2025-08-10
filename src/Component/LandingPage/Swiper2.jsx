@@ -28,7 +28,7 @@ export default function Swiper2() {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/admin/products/category/NewArrival');
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/admin/products/category/NewArrival`);
                 const productsWithDiscount = response.data.map(product => ({
                     ...product,
                     id: product._id,

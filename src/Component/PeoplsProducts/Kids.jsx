@@ -12,7 +12,7 @@ export default function Kids() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/admin/products/category/kids", {
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/admin/products/category/kids`, {
           headers: {
             'Cache-Control': 'no-cache',
             'Pragma': 'no-cache',

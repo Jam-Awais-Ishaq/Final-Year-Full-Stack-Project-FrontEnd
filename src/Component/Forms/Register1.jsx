@@ -71,7 +71,7 @@ const Register1 = ({handleClose}) => {
         }
 
         try {
-            const response = await axios.post('http://localhost:5000/api/users/register', {
+            const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/users/register`, {
                 email: formData.email,
                 username: formData.username,
                 phone: formData.phone,

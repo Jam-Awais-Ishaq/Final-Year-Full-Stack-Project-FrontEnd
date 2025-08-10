@@ -15,7 +15,7 @@ const Mens = () => {
     useEffect(() => {
         const fetcheProducts = async () => {
             try {
-                const response = await axios.get("http://localhost:5000/api/admin/products/category/mens")
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/admin/products/category/mens`)
                 const productsWithId = response.data.map(product => ({
                     ...product,
                     id: product._id,

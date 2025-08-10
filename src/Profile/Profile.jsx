@@ -34,7 +34,7 @@ const Profile = () => {
   const handleUpdateUsername = async () => {
     const token = localStorage.getItem('token');
     try {
-      const res = await fetch('http://localhost:5000/api/users/update-username', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/users/update-username`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -118,7 +118,7 @@ const Profile = () => {
     console.log("Token:", token);
     try {
       const res = await axios.put(
-        'http://localhost:5000/api/users/update-social-links',
+        `${import.meta.env.VITE_API_URL}/api/users/update-social-links`,
         { socialLinks },  // wrap it like this if your backend expects { socialLinks: { ... } }
         {
           headers: {
@@ -145,7 +145,7 @@ const Profile = () => {
     const fetchSocialLinks = async () => {
       const token = localStorage.getItem('token');
       try {
-        const res = await axios.get('http://localhost:5000/api/users/authenticateToken', {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/users/authenticateToken`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

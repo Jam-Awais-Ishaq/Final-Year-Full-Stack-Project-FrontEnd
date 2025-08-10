@@ -15,7 +15,7 @@ const VerifyEmail = ({ handleClose }) => {
             return;
         }
         try {
-            const response = await fetch('http://localhost:5000/api/users/forgot-password', {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/users/forgot-password`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -4,7 +4,7 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import CircularProgress from "@mui/material/CircularProgress";
 import Login1 from "./Login1";
-const apiUrl = import.meta.env.VITE_API_URL;
+
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
@@ -54,7 +54,7 @@ const NewPassword = () => {
         setState({ ...state, isLoading: true });
 
         try {
-            const response = await axios.patch(`${apiUrl}/api/users/reset-password/${token}`,
+            const response = await axios.patch(`${import.meta.env.VITE_API_URL}/api/users/reset-password/${token}`,
 
                 { password: state.password });
             console.log("hello Awais", response)

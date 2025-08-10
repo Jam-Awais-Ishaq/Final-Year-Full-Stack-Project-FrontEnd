@@ -23,7 +23,7 @@ export default function Swiper1() {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/admin/products/category/clothing');
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/admin/products/category/clothing`);
                 console.log("API Response:", response.data);
 
                 const productsWithId = response.data.map(product => ({
